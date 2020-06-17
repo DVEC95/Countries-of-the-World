@@ -1,4 +1,5 @@
-# countries
+# Countries of the World
+A web app capable of displaying information and the flag of a selected country.
 
 ## Project setup
 ```
@@ -14,6 +15,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
