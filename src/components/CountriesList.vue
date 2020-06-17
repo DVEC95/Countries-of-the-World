@@ -1,19 +1,30 @@
 <template lang="html">
   <div>
-    <ul>
+    <select v-model="selectedCountry" v-on:change="handleSelect">
       <list-item v-for="(country, index) in countries" :country="country" :key="index"></list-item>
-    </ul>
+    </select>
   </div>
 </template>
 
 <script>
 import ListItem from './ListItem.vue';
+import { eventBus } from '../main.js'
 
 export default {
   name: 'countries-list',
   props: ['countries'],
+  methods: {
+    handleSelect(){
+      eventBus.$emit('selected-country', this.selectedCountry)
+    }
+  },
   components: {
     "list-item": ListItem
+  },
+  data(){
+    return {
+      selectedCountry: null
+    }
   }
 }
 </script>
